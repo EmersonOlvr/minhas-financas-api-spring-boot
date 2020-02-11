@@ -19,13 +19,17 @@ import javax.persistence.Table;
 import com.emerson.minhasFinancas.model.enums.StatusLancamento;
 import com.emerson.minhasFinancas.model.enums.TipoLancamento;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "lancamento", schema = "financas")
 @Builder
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Lancamento {
 
 	@Id

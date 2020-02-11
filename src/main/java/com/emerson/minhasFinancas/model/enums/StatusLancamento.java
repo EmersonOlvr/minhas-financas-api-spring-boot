@@ -2,7 +2,7 @@ package com.emerson.minhasFinancas.model.enums;
 
 public enum StatusLancamento {
 
-	PEDENTE,
+	PENDENTE,
 	CANCELADO,
 	EFETIVADO
 	
