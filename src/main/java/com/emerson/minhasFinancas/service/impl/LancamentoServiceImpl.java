@@ -1,4 +1,4 @@
-package com.emerson.minhasFinancas.service;
+package com.emerson.minhasFinancas.service.impl;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -17,6 +17,7 @@ import com.emerson.minhasFinancas.model.entity.Lancamento;
 import com.emerson.minhasFinancas.model.enums.StatusLancamento;
 import com.emerson.minhasFinancas.model.enums.TipoLancamento;
 import com.emerson.minhasFinancas.model.repository.LancamentoRepository;
+import com.emerson.minhasFinancas.service.LancamentoService;
 
 @Service
 public class LancamentoServiceImpl implements LancamentoService {
@@ -69,7 +70,7 @@ public class LancamentoServiceImpl implements LancamentoService {
 	@Override
 	public void validar(Lancamento lancamento) {
 		if (Strings.isBlank(lancamento.getDescricao())) {
-			throw new RegraNegocioException("Informa uma Descrição válida.");
+			throw new RegraNegocioException("Informe uma Descrição válida.");
 		}
 		
 		if (lancamento.getMes() == null || lancamento.getMes() < 1 || lancamento.getMes() > 12) {
@@ -81,7 +82,7 @@ public class LancamentoServiceImpl implements LancamentoService {
 		}
 		
 		if (lancamento.getUsuario() == null || lancamento.getUsuario().getId() == null) {
-			throw new RegraNegocioException("Ifnorme um Usuário.");
+			throw new RegraNegocioException("Informe um Usuário.");
 		}
 		
 		if (lancamento.getValor() == null || lancamento.getValor().compareTo(BigDecimal.ZERO) < 1) {
